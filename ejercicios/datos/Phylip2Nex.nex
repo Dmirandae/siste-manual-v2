@@ -1,0 +1,11 @@
+#nexus
+
+begin paup;
+
+[! Convierte un archivo Newick/Phylip a Nexus ]
+
+tonex from=dna.phy to=dna.nex format=relphylip;
+
+quit;
+
+end; [bloque paup]

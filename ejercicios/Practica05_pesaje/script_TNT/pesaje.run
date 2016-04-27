@@ -1,0 +1,27 @@
+/* Lenguaje de macros ON */
+macro =;
+
+/* Leer la matriz */
+proc datos.pesado.dat;
+
+/* el nombre de taxa y no los números por defecto */
+taxname=;
+
+mult;
+
+/* Pesaje implicito ON */
+piwe=N;
+
+piwe [;
+
+mult;
+
+ttags=;
+
+/* Remuestreo - Bootstrap */
+resample boot replications 100;
+
+ttags;
+
+/* Exportar el árbol formato nexus */
+export -pesaje_piwe.tre;

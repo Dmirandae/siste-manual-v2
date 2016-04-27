@@ -1,0 +1,26 @@
+\subsection{NONA}
+\noindent
+Es v\'alido para \Pname{NONA}, \Pname{TNT}, \Pname{Hennig86} (formato de morfolog\'ia de \Pname{POY}) y \Pname{WinClada}; comienza con \cmd{xread}, luego el n\'umero de caracteres y el n\'umero de taxa, los polim\'orficos entre par\'entesis angulares y los desconocidos con \cmd{-} o \cmd{?}. Al final, un punto y coma y si se desea la aditividad de los caracteres (comenzando desde 0). Termina con \cmd{p/} o \cmd{p-}, que los programas interpretan como fin del archivo.\\
+\\
+\noindent
+\cmd{xread $'$Matriz ejemplo$'$ 5 5\\
+out        00000\\
+alpha     10-20\\
+beta      1102[01]\\
+gamma  1?111\\
+lamda    11111\\
+;\\
+cc -0.2 +3 -4;\\
+p/;}\\
+\\
+Para ADN (en \Pname{NONA}) se usa \cmd{dread}, con la cla\'usula \cmd{gap} seguida de \cmd{?} si se quieren asumir los \textit{gaps} como desconocidos, o con \cmd{;} si quiere que sean un quinto estado. Se usa codificaci\'on tipo IUPAC.\\
+\\
+\cmd{dread gap ; match . $'$DNA$'$ 5 5\\
+out        ACGTC\\
+alpha     AT-CG\\
+beta      RTAAC\\
+gamma CGAY-\\
+lamda   TCNCC\\
+;\\
+cc -.;\\
+p/;}

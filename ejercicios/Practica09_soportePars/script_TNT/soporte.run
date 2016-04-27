@@ -1,0 +1,45 @@
+
+macro=;
+
+
+proc datos.particiones.dat;
+
+
+taxname=;
+
+hold 1000;
+mult 500; bbreak;
+
+
+ttags=;
+
+
+resample boot replications 100;
+
+ttags;
+
+
+export -boot.tre;
+
+ttags-;
+
+ttags=;
+
+
+bsupport;
+
+ttags;
+
+
+export -bremer.tre;
+
+ttags-;
+
+ttags=;
+
+
+bsupport*;
+
+ttags;
+
+export -bremer_rel.tre;

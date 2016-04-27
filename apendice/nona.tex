@@ -1,0 +1,20 @@
+\subsection{NONA}
+\noindent
+Autor: Goloboff, 1998.
+
+Plataforma: Linux, Mac o Windows (9x o superior).
+
+Disponiblilidad: Gratuito en conjunto con otros programas en \url{www.lillo.org.ar/phylogeny/Nona-PeeWee/}.
+
+
+Este programa es una buena opci\'on que existe para b\'usquedas bajo parsimonia, dado que es gratuito, tiene lenguaje de macros y es veloz, pero dados los costos, velocidad y operatibidad de \Pname{TNT}, este \'ultimo es la mejor opci\'on.
+
+
+B\'asicamente los comandos de \Pname{NONA} son los mismos de \Pname{TNT}. Una diferencia importante (aparte de la velocidad y algoritmos implementados) es que en \Pname{NONA} los comandos son ejecutados (en vez de poder configurar sin ejecutar). A diferencia de \Pname{PAUP*}, no puede desactivar terminales.
+
+Al igual que en \Pname{TNT}, el comando simple de b\'usqueda es \cmd{mult}. Para permutar ramas se utiliza \cmd{max}. En ambos casos debe colocarse un asterisco \cmd{mult*; max*} para que utilice TBR como permutaci\'on, en caso contrario usar\'a SPR.
+
+
+Para salvar el \'arbol, el comando es \cmd{sv}. La primera vez que se llama, solo abre el archivo (Debe darse como par\'ametro o el programa solicita un nombre). Con \cmd{sv*} salva todos los \'arboles en memoria. Usando \cmd{ksv} se guardan los \'arboles colapsados, de lo contrario siempre se guardan dicot\'omicos. Para salvar el consenso es necesario usar \cmd{inters}.
+
+El \'unico m\'etodo de soporte expl\'icitamente implementado es el soporte de Bremer \cmd{bsupport}: con asterisco \cmd{bs*} muestra los soportes relativos, \'o de lo contrario muestra el valor absoluto. Pero el programa viene acompa\~nado de varios programas y macros que permiten calcular \textit{jackknife} y \textit{bootstrap}, as\'i como hacer medidas basadas en frecuencias relativas (FC).

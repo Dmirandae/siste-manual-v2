@@ -1,0 +1,70 @@
+\chapter{Soporte en ML}
+\section*{Introducci\'on}
+\index{Soporte!ML}
+\index{Soporte!ML!Bootstrapping no param\'etrico}
+
+
+Tal y como se hizo para el an\'alisis de parsimonia (pr\'actica \ref{ch:soporte.pars}), bajo ML es importante conocer la evidencia de cada nodo, m\'axime cuando en ML no hay transformaciones, por lo que los valores de soporte son indicadores de la \textbf{evidencia} del nodo. Los m'etodos para medir el soporte est\'an basados en remuestreo de los caracteres; as\'i, tanto \textit{bootstrap} 
+\index{Soporte!bootstrap} como \textit{jackknife} 
+\index{Soporte!jackknife} son aplicables a datos moleculares, aunque el m'etodo preferido es el \textit{bootstrap}; dado que no se usa una distribuci\'on en particular se denomina \textbf{\textit{bootstrap} no param\'etrico} en contraposici\'on al \textbf{param\'etrico}, que se basa en la simulaci\'on de los datos dado un modelo particular. Algunas evaluaciones emp\'iricas han mostrado que el an\'alisis depende fuertemente del modelo calculado y del \'arbol obtenido a partir de tal modelo \citep{Felsenstein2004,Antezana2003}.
+
+
+\section*{T'ecnicas}
+La medici\'on de soporte usando \textit{boostrap} no param\'etrico ya fue discutida en la secci\'on de soporte en parsimonia; el \textit{boostrap} param'etrico es una prueba de simulaci\'on que depende del modelo encontrado como estimador de la evoluci\'on de las mol\'eculas \citep{Felsenstein2004}; la prueba busca evaluar que pasar\'ia si obtenemos m\'as datos a partir del mismo modelo, el cual es \textit{cierto}. Con esta idea se simulan datos a partir del \'arbol que se obtiene con los datos \textbf{reales}; a partir de estos datos simulados se estiman los \'arboles, los cuales en conjunto son resumidos con un consenso de la mayor\'ia que sirve como estimador de los soportes de los nodos. Las secuencias simuladas se obtienen con los mismos par\'ametros y con el mismo modelo que la hip\'otesis inicial.
+
+
+
+\begin{enumerate}
+
+  \item Con \Pname{JModeltest}:
+  \begin{enumerate}
+    \item \label{itm:bootpar:modelo}Para la matriz \Fname{datos.param.dat} calcule el mejor modelo.
+  \end{enumerate}
+   
+  \item En \Pname{PAUP*}:
+  \begin{enumerate}
+    \item \label{itm:bootpar:arbol}Obtenga el mejor \'arbol con cualquiera de los programas usados para an\'alisis de ML, preferencialmente \Pname{PAUP*}; para salvar un \'arbol en formato \Formato{Newick} con los costos de las ramas, use la instrucci\'on: \Cmd{savet format=phylip brlens=yes;}
+
+    \item Calcule el soporte de boostrap no param\'etrico para el \'arbol generado, use 100 r\'eplicas.
+  \end{enumerate}
+   
+  \item \label{itm:bootpar:simul}\Pname{Seq-Gen} no esta compilado para ning\'un sistema operativo, puede obtener el c\'odigo fuente desde \url{http://tree.bio.ed.ac.uk/software/seqgen/} y compilarlo. Revise las pr\'acticas anteriores y la secci\'on de programas (p\'agina \pageref{ch:programas}), Con \Pname{Seq-Gen} para obtener 10 r\'eplicas \cmd{-n10} de secuencias de 27 bases \cmd{-l27}, use HKY \cmd{-mHKY} con los par\'ametros de Ts/Tv y frecuencias de base que trae por defecto el programa\footnote{En seq-gen no existe el modelo JC, por lo que debe usar HKY con ts=tv y frecuencias iguales.}, con una distribuci\'on $\Gamma$ con un valor $\alpha$ de 1.6985 (\cmd{-a1.6985}) en formato \Formato{NEXUS}, a partir del \'arbol salvado como \Fname{arbol.tre}; use la l\'inea de comandos:
+\Cmd{$seq$-$gen -mHKY -n10 -l27 -a1$.$6985 <arbol.tre >sec.nex$}
+
+Escoja el archivo de \'arboles que obtuvo con \Pname{PAUP*} y especifique la salida.
+
+Usted puede tener un archivo de instrucciones e insertarlo despues de cada secuencia con la instrucci\'on \cmd{-xInstruc.txt} en \Pname{Seq-Gen}.
+
+  \begin{enumerate}
+    \item En \Pname{Seq-Gen} simule 10 secuencias con el \'arbol producto del an\'alisis bajo ML\footnote{Tambi\'en puede usar un \'arbol con constricci\'on, es decir forzando la monofilia de un grupo en particular, si la pregunta est\'a limitada a un grupo particular.} y con el modelo generado en \ref{itm:bootpar:modelo}.
+  \end{enumerate}
+   
+
+  \item Con \Pname{PAUP*} o con el programa que uso en \ref{itm:bootpar:arbol}:
+  \begin{enumerate}
+    \item Analice el archivo de simulaciones obtenido en \ref{itm:bootpar:simul}, usando los mismos comandos que uso en \ref{itm:bootpar:arbol}, recuerde que tiene 10 r\'eplicas, por lo que debe incluir los comandos al final de cada matriz, usando un bloque de \Pname{PAUP*}; dado que \Pname{Seq-Gen} genera un archivo Newick/Phylip, en \Pname{PAUP*} use la instrucci\'on \Cmd{tonex from=archivo.phy to=archivo.nex format=relphylip} para convertir entre formatos, revise con \cmd{tonex ?} las opciones requeridas. 
+    \item Obtenga el consenso de la mayor\'ia para los \'arboles generados.
+  \end{enumerate}
+  
+\end{enumerate}
+  
+
+
+\preguntaGral{
+\begin{itemize}
+  \item Compare con los valores obtenidos para la misma matriz usando soporte de \textit{bootstrap} param\'etrico y no \textit{param\'etrico}, ?`Son equivalentes los resultados?
+  \item Repita la comparaci\'on pero con los resultados de sus compa\~neros.
+  \begin{itemize}
+    \item  Dado el n\'umero de r\'eplicas usado, ?`obtienen resultados similares de soporte? 
+    \item ?`Variar\'a el soporte al aumentar el n\'umero de r\'eplicas?
+  \end{itemize} 
+
+  \item Dados los m\'etodos de soporte usados, ?`usted qu\'e tipo de soporte recomienda?
+\end{itemize} 
+}
+
+\section*{Literatura recomendada}
+
+\cite{Antezana2003} [Una visi\'on cr\'itica al uso del boostrap param\'etrico].
+
+\cite{Felsenstein2004}[Tiene un cap\'itulo descriptivo de los an\'alisis de boostrap].

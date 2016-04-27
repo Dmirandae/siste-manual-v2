@@ -1,0 +1,9 @@
+#NEXUS
+
+begin trees ; 
+tree tagged_tree = [&U] 
+(angulifer ,(cenchria ,(striatus ,(((chysogaster ,exsul ) 43 ,(gracilis ,(fordii ,monensis ) 38 ) 100 ) 1 ,(inornatus ,subflavus ) 83 ) 100 ) 96 ) 100 )  ;
+tree tnt_1 = [&U] 
+(angulifer ,(cenchria ,(striatus ,(((chysogaster ,exsul ),(gracilis ,(fordii ,monensis ))),(inornatus ,subflavus )))));
+
+end ; 

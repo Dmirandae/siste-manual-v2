@@ -1,0 +1,9 @@
+#NEXUS
+
+begin trees ; 
+tree tagged_tree = [&U] 
+(Hyrachyus ,(Hyracodontinae ,(Teletaceras ,(Eggysodontinae ,(Penetrigonias ,Subhyracodon ,(Trigonias ,(Floridaceras ,Ronzotherium ,Mesaceratherium ,Lartetotherium ,Iranotherium ,Aprotodon ,Rhinoceros ,Dicerorhinus ,(Amphicaenopus ,Gaindatherium ) 7 ,(Menoceras ,(Diceratherium ,Pleuroceras ) 5 ) 4 ,(F_AM_95544 ,Protaceratherium ) 27 ,(Peraceras ,Aphelops ,Acerorhinus ,((Teleoceras ,Chilotherium ) 17 ,(Prosantorhinus ,(Diaceratherium ,Brachypotherium ) 62 ) 13 ) 5 ,(Alicornops ,Chilotheridium ) 8 ) 1 ,(Hoploaceratherium ,Aceratherium ) 25 ,(L_schleiermacheri ,Punjabitherium ) 23 ,(Ninxiatherium ,(Stephanorhinus ,(Coelodonta ,Elasmotherium ) 24 ) 22 ) 1 ,(beliajevina ,(Hispanotherium ,begertherium ) 24 ) 29 ,(Paradiceros ,(Diceros ,Ceratotherium ) 56 ) 7 ) 4 ) 5 ) 11 ) 46 ) 60 ) 100 )  ;
+tree tnt_1 = [&U] 
+(Hyrachyus ,(Hyracodontinae ,(Teletaceras ,(Eggysodontinae ,(Penetrigonias ,Subhyracodon ,(Trigonias ,(Floridaceras ,Ronzotherium ,Mesaceratherium ,Lartetotherium ,Iranotherium ,Aprotodon ,Rhinoceros ,Dicerorhinus ,(Amphicaenopus ,Gaindatherium ),(Menoceras ,(Diceratherium ,Pleuroceras )),(F_AM_95544 ,Protaceratherium ),(Peraceras ,Aphelops ,Acerorhinus ,((Teleoceras ,Chilotherium ),(Prosantorhinus ,(Diaceratherium ,Brachypotherium ))),(Alicornops ,Chilotheridium )),(Hoploaceratherium ,Aceratherium ),(L_schleiermacheri ,Punjabitherium ),(Ninxiatherium ,(Stephanorhinus ,(Coelodonta ,Elasmotherium ))),(beliajevina ,(Hispanotherium ,begertherium )),(Paradiceros ,(Diceros ,Ceratotherium )))))))));
+
+end ; 
