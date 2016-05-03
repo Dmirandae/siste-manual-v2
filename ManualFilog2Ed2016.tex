@@ -2,8 +2,11 @@
 
 
 % preambulo
-%
+%% contiene tipos de letras
+
 \input{./formato/preaMuyBreve.tex}
+
+
 
 %\includeonly{./caracteres/caracteres}
 
@@ -14,17 +17,26 @@
 %\includeonly{./practica11/bayesiano}
 
 
+%%% separado de palabras
+
+%%
+\input{./formato/separar.tex}
+
+
+
 
 
 \begin{document}
-% para mover a prefacious
-%%% macros
+
 %
 \input{./formato/macros.tex}
 
 %
 \input{./formato/macro-preguntas.tex}
 
+\renewcommand{\contentsname}{Listado de pr{\'a}cticas}
+
+\renewcommand{\chaptername}{Pr{\'a}ctica}
 
 %\input{./formato/portada.tex}
 
@@ -58,34 +70,41 @@
 %
 \mainmatter
  
-
-\renewcommand{\chaptername}{Pr{\'a}ctica}
-
 %
 \include{./caracteres/caracteres}
 
 %
 \include{./matrices/matrices}
 
-%\include{./arboles/arboles}
+%
+\include{./arboles/arboles}
 
-%\include{./busquedas/busquedas}
+%
+\include{./busquedas/busquedas}
 
-%\include{./pesaje/pesaje}
+%
+\include{./pesaje/pesaje}
 
-%\include{./alinear/alinear}
+%
+\include{./alinear/alinear}
 
-%\include{./modelos/modelos}
+%
+\include{./modelos/modelos}
 
-%\include{./ml/ml}
+%
+\include{./ml/ml}
 
-%\include{./consenso/consenso}
+%
+\include{./consenso/consenso}
 
-%\include{./soporte/soporteBootJackBremer}
+%
+\include{./soporte/soporteBootJackBremer}
 
-%\include{./soporte/soporteParamBoot}
+%
+\include{./soporte/soporteParamBoot}
 
-%\include{./bayes/bayes}
+%
+\include{./bayes/bayes}
 
 
 % % % % % Apendices
@@ -121,6 +140,9 @@
 %%%%% http://tex.stackexchange.com/questions/194454/hack-for-including-doi-in-agsm-bibliography-style
 % and some reading of plainnat bst 
 
+
+\renewcommand{\bibname}{Literatura citada}
+
 \bibliographystyle{./bib/systbioDOI} 
 
 
@@ -145,124 +167,3 @@
 \end{document}
 
 
-
-%%% separado de palabras
-
-%%\input{./formato/separar.tex}
-
-
-%\includeonly{./practica04/busquedasPars}
-
-%\includeonly{./practica01/caracteres}
-
-%\includeonly{./practica06/modelos}
-
-
-%\setmainfont{Verdana}
-
-%\fontspec{Ubuntu}
-
-
-%\usepackage{ubuntu}
-
-%%%%%%%%
-%%%%%%%% color in seccion
-%%%%%%%%
-
-
-%\usepackage{titlesec}
-%
-%\titleformat{\section}
-%{\color{black!45}\normalfont\large\bfseries}
-%{\color{black!60}\normalfont\large}
-%{\color{black!60}\thesection}{1em}{}
-
-%\titleformat{\chapter}
-%{\color{black!75}\normalfont\Large}
-%{\color{black!80}{Pr\'actica }\thechapter}{1em}{}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%
-
-%\doublespacing
-
-%\fontsize{14}{14}\selectfont
-
-
-%
-%\include{portada}
-
-%\pagestyle{empty}
-
-%\textsf{
-
-% \maketitle
-%\Large
-%
-%\normalsize
-
-%\tableofcontents
-%\frontmatter
-
-%\large
-% 
-%\input{./intro/intro.tex}
-
-
-%\mainmatter
-% 
-
-%%%%%%%%%%%%
-%%%%
-%% texto central
-%%%%
-%%%%%%%%%%%%
-
-%\input{./formato/formato_new.tex}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%\include{./practica09/soporte-ml-2013}
-
-%\include{./practica11/bayesiano}
-
-
-%\input{alinear2014.tex}
-
-% 
-%\small
-%
-%\input{new_bibliografia.tex}
-%}
-
-
-
-%\backmatter
-%\appendix
-%\textsf{
-%
-%
-%\large
-%
-%\renewcommand{\chaptername}{Ap\'endice}
-
-%\input{./intro/tipografia.tex}
-
-%\input{./apendice/programas.tex}
-
-%\input{./apendice/formatos.tex}
-
-%\input{./apendice/usoR.tex}
-
-%\input{./apendice/usoPOY.tex}
-
-
-%}
-%
-%
-%\large
-%\printindex
