@@ -1,0 +1,14 @@
+
+COMMAND: 'HOLD'
+
+COMMAND: 'HOLD'
+
+COMMAND: 'MULT'
+1 trees of steps=15 retained (*)
+COMMAND: 'MAX'
+Tree search (*),
+steps=15, 5 trees found
+
+COMMAND: 'SV'
+
+COMMAND: 'OUTPUT'
