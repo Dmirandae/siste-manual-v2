@@ -1,0 +1,173 @@
+\documentclass[12pt,openany]{book}
+
+
+% preambulo
+%% contiene tipos de letras
+
+\input{./formato/preaMuyBreve.tex}
+
+
+
+%\includeonly{./caracteres/caracteres}
+
+%\includeonly{./matrices/matrices}
+
+%\includeonly{./practica09/soporte-ml-2013}
+
+%\includeonly{./practica11/bayesiano}
+
+
+%%% separado de palabras
+
+%%
+\input{./formato/separar.tex}
+
+
+
+
+
+\begin{document}
+
+%
+\input{./formato/macros.tex}
+
+%
+\input{./formato/macro-preguntas.tex}
+
+\renewcommand{\contentsname}{Listado de pr{\'a}cticas}
+
+\renewcommand{\chaptername}{Pr{\'a}ctica}
+
+%\input{./formato/portada.tex}
+
+\maketitle
+
+\tableofcontents
+
+
+%%
+%% revisar 
+%% maxima especificada en masculino
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          texto intro  			  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+\frontmatter
+
+%
+\include{./intro/intro}
+
+%\input{./intro/tipografia.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          texto central			  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+\mainmatter
+ 
+%
+\include{./caracteres/caracteres}
+
+%
+\include{./matrices/matrices}
+
+%
+\include{./arboles/arboles}
+
+%
+\include{./busquedas/busquedas}
+
+%
+\include{./pesaje/pesaje}
+
+%
+\include{./alinear/alinear}
+
+%
+\include{./modelos/modelos}
+
+%
+\include{./ml/ml}
+
+%
+\include{./consenso/consenso}
+
+%
+\include{./soporte/soporteBootJackBremer}
+
+%
+\include{./soporte/soporteParamBoot}
+
+%
+\include{./bayes/bayes}
+
+
+% % % % % Apendices
+
+\renewcommand{\chaptername}{Ap{\'e}ndice}
+
+
+\renewcommand\appendixtocname{Ap{\'e}ndice}
+%
+
+\appendix
+
+{\small	
+
+
+\input{./apendice/programas.tex}
+
+%
+%
+\input{./apendice/formatos.tex}
+
+%
+%
+\input{./apendice/usoPOY.tex}
+%
+}
+
+
+
+
+\backmatter
+
+
+%\bibliographystyle{plainnat}
+
+%%%%% get the doi in the bst
+%%%%% http://tex.stackexchange.com/questions/194454/hack-for-including-doi-in-agsm-bibliography-style
+% and some reading of plainnat bst 
+
+
+\renewcommand{\bibname}{Literatura citada}
+
+\bibliographystyle{./bib/systbioDOI} 
+
+
+\begin{small}
+
+
+{\color{black!75}
+	\texttt{
+	\bibliography{./bib/manual}
+	}	
+}
+
+%
+{\color{gray!75}
+  \printindex
+}
+
+\end{small}
+
+
+
+\end{document}
+
+
