@@ -21,7 +21,7 @@ Existen diferentes programas para manipular matrices de datos y \'arboles. Algun
 (\Pname{WinClada}\footnote{\url{www.cladistics.com}}, 
 \Pname{Mesquite}\footnote{\url{www.mesquiteproject.org}}, 
 \Pname{MacClade}\footnote{el programa no corre en versiones de MacOS X superiores a 10.6 (desde Lion en adelante)}, 
-\Pname{R}\footnote{\Pname{R} es uno de los programas para an\'alisis estad\'istico m\'as vers\'atiles, adem\'as de ser gratuito permite la implementaci\'on de m\'ultiples procesos de c\'alculo desde estadistica b\'asica hasta m\'ultiples an\'alisis en evoluci\'on; sirve de plataforma para \Rlib{ape} \cite{Paradis2008}, un m\'odulo que permite distintas acciones con matrices y \'arboles, lo puede obtener desde \url{http://cran.r-project.org}.}
+\Pname{R}\footnote{\Pname{R} es uno de los programas para an\'alisis estad\'istico m\'as vers\'atiles, adem\'as de ser gratuito permite la implementaci\'on de m\'ultiples procesos de c\'alculo desde estad\'istica b\'asica hasta m\'ultiples an\'alisis en evoluci\'on; sirve de plataforma para \Rlib{ape} \cite{Paradis2008}, una biblioteca que permite distintas acciones con matrices y \'arboles. El programa se puede obtener desde \url{http://cran.r-project.org}.}
 o 
 \Pname{Seaview}\footnote{\url{http://doua.prabi.fr/software/seaview}}). 
 
@@ -45,12 +45,10 @@ o en
 \url{http://taxonomy.zoology.gla.ac.uk/software/}
 
 
-Abra el archivo de datos morfol\'ogicos para vertebrados: 
+Abra el archivo de datos morfol\'ogicos para vertebrados: \Datos{\href{https://github.com/Dmirandae/siste-manual-v2/blob/master/ejercicios/Practica02_matrices/datos/datos.vertebrados.xls}{datosVertebrados.xls}} con un programa para hojas de c\'alculo. Para manipular las matrices para an\'alisis filogen\'etico use \Pname{WinClada}, 
+\Pname{Mesquite} o \Pname{TNT} para Windows.
 
-\Datos{datosVertebrados.xls} 
-
-con un programa para hojas de c\'alculo y manipule las matrices con \Pname{WinClada}, 
-\Pname{Mesquite} o \Pname{TNT} para Windows:
+Realice las siguientes actividades:
 
 \begin{enumerate}
 	\item Anote cu\'ales caracteres son multiestado y cu\'ales son binarios.
@@ -61,9 +59,9 @@ con un programa para hojas de c\'alculo y manipule las matrices con \Pname{WinCl
 
 	\item Dado que los programas no cuentan con opciones de salvado autom\'atico, peri\'odicamente salve la matriz.
 
-	\item Nomine los terminales y los caracteres y sus estados. Explore diferentes formas de llevar esa tarea a cabo. 
+	\item Nomine los terminales y los caracteres y sus estados. Explore diferentes formas en las que puede hacerlo. 
 
-	\item Suponga que algunos autores consideran que las plumas son escamas modificadas. Aceptando esa informaci\'on, recodifique la matriz y determine si el car\'acter es aditivo o no.
+	\item Algunos autores consideran que las plumas son escamas modificadas. Aceptando esa informaci\'on, recodifique la matriz y determine si el car\'acter es aditivo o no.
 
 	\item Seleccione el \'ultimo car\'acter y col\'oquelo al principio de la matriz. 
 
@@ -73,13 +71,13 @@ con un programa para hojas de c\'alculo y manipule las matrices con \Pname{WinCl
 
 	\item Verifique la compatibilidad de los datos, abriendo la matriz en el programa correspondiente.
 
-	\item Revise con un editor de texto los archivos que usted cre\'o, trate de identificar cu\'ales son las partes claves del formato\footnote{Aunque en general no se usan los editores de texto, este paso es cr\'itico para despu\'es ser capaz de rastrear los problemas que pueden tener las matrices de datos.}.
+	\item Revise con un editor de texto los archivos que usted cre\'o, trate de identificar cu\'ales son las partes claves del formato\footnote{Aunque en general no se usan los editores de texto, este paso es cr\'itico para despu\'es poder rastrear los problemas que pueden tener las matrices de datos.}.
 
-	\item Abra una de las matrices moleculares en cada programa y con un editor de texto y trate de identificar en qu\'e se diferencia de la matriz morfol\'ogica.
+	\item Abra una de las matrices moleculares en cada programa y con un editor de texto y trate de identificar en qu\'e se diferencia(n) de la matriz morfol\'ogica.
 
 	\item en \Pname{R}:
 	\begin{enumerate}
-		\item Instale en su ordenador la versi\'on m\'as reciente de R ($\ge$ 3.2.0). 
+		\item Instale en su ordenador la versi\'on m\'as reciente de R ($\ge$ 3.3.3). 
 
 		\item Carge las bibliotecas \Rlib{ape} y \Rlib{phangorn}\footnote{La biblioteca \Rlib{phangorn} est\'a diseñada para an\'alisis filogen\'eticos que tiene como objetivo estimar \'arboles y redes, utilizando diferentes m\'etodos como m\'axima verosimilitud, parsimonia, distancia y conjugaci\'on de Handamard, requiere las bibliotecas \Rlib{ape} y \Rlib{rgl}. 
 		Puede ser descargado desde \url{http://cran.r-project.org/web/packages/phangorn/index.html}}: 
