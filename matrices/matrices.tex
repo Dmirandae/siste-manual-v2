@@ -6,7 +6,7 @@
 
 Una de las diferencias m\'as importantes entre los trabajos taxon\'omicos con un enfoque \textbf{cl\'asico} y los an\'alisis filogen\'eticos es que estos \'ultimos incluyen expl\'icitamente una matriz de datos donde se pueden evidenciar los caracteres examinados, y c\'omo fueron interpretados.
 
-B\'asicamente, la matriz de datos es una lista tabulada de las observaciones de los caracteres en los distintos taxa. Para facilitar su lectura y su uso en programas de an\'alisis filogen\'etico, los caracteres y sus estados son codificados como n\'umeros o como letras.
+B\'asicamente, la matriz de datos es una lista tabulada de las observaciones de los caracteres -morfol\'ogicos o moleculares- en los distintos taxa. Para facilitar su lectura y su uso en programas de an\'alisis filogen\'etico, los caracteres y sus estados son codificados como n\'umeros o como letras.
 
 Una vez construida, la matriz es el punto de partida para la b\'usqueda de \'arboles y la manera m\'as sencilla con la que otros investigadores pueden recuperar la informaci\'on recopilada durante el \textbf{an\'alisis de caracteres}.\footnote{si desea puede ver nuestra visi\'on ampliada en \cite{Mirandaetal2004}.}
 
@@ -21,13 +21,13 @@ Existen diferentes programas para manipular matrices de datos y \'arboles. Algun
 (\Pname{WinClada}\footnote{\url{www.cladistics.com}}, 
 \Pname{Mesquite}\footnote{\url{www.mesquiteproject.org}}, 
 \Pname{MacClade}\footnote{el programa no corre en versiones de MacOS X superiores a 10.6 (desde Lion en adelante)}, 
-\Pname{R}\footnote{\Pname{R} es uno de los programas para an\'alisis estad\'istico m\'as vers\'atiles, adem\'as de ser gratuito permite la implementaci\'on de m\'ultiples procesos de c\'alculo desde estad\'istica b\'asica hasta m\'ultiples an\'alisis en evoluci\'on; sirve de plataforma para \Rlib{ape} \cite{Paradis2008}, una biblioteca que permite distintas acciones con matrices y \'arboles. El programa se puede obtener desde \url{http://cran.r-project.org}.}
+\Pname{R}\footnote{\Pname{R} es uno de los lenguajes para an\'alisis estad\'istico m\'as vers\'atiles; adem\'as de ser gratuito permite la implementaci\'on de m\'ultiples procesos de c\'alculo desde estad\'istica b\'asica hasta m\'ultiples an\'alisis en evoluci\'on; sirve de plataforma para \Rlib{ape} \cite{Paradis2008}, una biblioteca que permite distintas acciones con matrices y \'arboles. El programa se puede obtener desde \url{http://cran.r-project.org}.}
 o 
 \Pname{Seaview}\footnote{\url{http://doua.prabi.fr/software/seaview}}). 
 
-En su mayor\'ia estos programas sirven de plataforma para manejar otros programas que realizan el an\'alisis filogen\'etico como tal. Muchos de los programas que manejan matrices est\'an dise\~nados b\'asicamente para alg\'un tipo particular de datos (por ejemplo, ADN) y aquellos que tienen un marco amplio se quedan cortos para manejar cierta clase de informaci\'on (por ejemplo, no interpretan la codificaci\'on IUPAC para polimorfismos de ADN).
+En su mayor\'ia, estos programas sirven de plataforma para manejar otros programas que realizan el an\'alisis filogen\'etico como tal. Muchos de los programas que manejan matrices est\'an dise\~nados b\'asicamente para alg\'un tipo particular de datos (por ejemplo, ADN) y aquellos que tienen un marco amplio se quedan cortos para manejar cierta clase de informaci\'on (por ejemplo, no interpretan la codificaci\'on IUPAC para polimorfismos de ADN).
 
-Los programas pueden leer uno o varios formatos de archivos, pero solo algunos programas como \Pname{Mesquite} leen y escriben todos los formatos de datos; es importante revisar la compatibilidad de los programas para el manejo de archivos. En la mayor\'ia de ellos es posible exportar entre los diferentes tipos de datos, o por lo menos entre los m\'as usados. En general, la mayor parte de los programas trabaja bien con el formato NEXUS \citep{Maddison1997}, tanto para exportar como para importar, aunque el formato es en ocasiones muy diferente y algunos programas pueden no identificarlo correctamente. 
+Los programas pueden leer uno o varios formatos de archivos, pero solo algunos programas como \Pname{Mesquite} leen y escriben todos los formatos de datos. Es importante revisar la compatibilidad de los programas para el manejo de archivos. En la mayor\'ia de ellos es posible exportar entre los diferentes tipos de datos, o por lo menos entre los m\'as usados. En general, la mayor parte de los programas trabaja bien con el formato NEXUS \citep{Maddison1997}, tanto para exportar como para importar, aunque el formato es en ocasiones muy diferente y algunos programas pueden no identificarlo correctamente. 
 
 Otro formato importante es el de Hennig86 o NONA, pero en muchos programas, especialmente moleculares, su uso no est\'a implementado.
 
@@ -45,7 +45,7 @@ o en
 \url{http://taxonomy.zoology.gla.ac.uk/software/}
 
 
-Abra el archivo de datos morfol\'ogicos para vertebrados: \Datos{\href{https://github.com/Dmirandae/siste-manual-v2/blob/master/ejercicios/Practica02_matrices/datos/datos.vertebrados.xls}{datosVertebrados.xls}} con un programa para hojas de c\'alculo. Para manipular las matrices para an\'alisis filogen\'etico use \Pname{WinClada}, 
+Abra el archivo de datos morfol\'ogicos para vertebrados: \Datos{\href{https://github.com/Dmirandae/siste-manual-v2/blob/master/ejercicios/Practica02_matrices/datos/datos.vertebrados.xls}{datosVertebrados.xls}} con un programa para manipular hojas de c\'alculo. Para trabajar las matrices para an\'alisis filogen\'etico use \Pname{WinClada}, 
 \Pname{Mesquite} o \Pname{TNT} para Windows.
 
 Realice las siguientes actividades:
