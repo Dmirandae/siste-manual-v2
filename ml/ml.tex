@@ -84,34 +84,66 @@ Los m\'etodos para buscar y seleccionar \'arboles usados en verosimilitud son b\
   Actualmente se puede realizar un an\'alisis de evidencia total con DNA(con o
   sin incluir datos morfol\'ogicos) usando una evaluaci\'on del ML para un conjunto de datos particionado, donde cada partici\'on debe tener su propio modelo (en realidad variaciones de GTR).
 
-  \Pname{RaxML} es un programa mucho m\'as r\'apido que \Pname{PhyML} y por lo tanto deber\'ia ser una de sus primeras opciones, el programa cuenta con un solo esquema de instrucciones: por l\'inea de commandos.
+  \Pname{RaxML-NG} es un programa mucho m\'as r\'apido que 
+  \Pname{PhyML} y por lo tanto deber\'ia ser una de sus primeras 
+  opciones, el programa cuenta con un solo esquema de instrucciones: 
+  por l\'inea de commandos. Para mayor informaci\'on revise 
+  \http{https://github.com/amkozlov/raxml-ng}.
+  
+  
+  .
 
-  \item{en RaxML}
+  \item{en RaxML-NG}
 
 	\begin{enumerate}
-		\item Haga una corrida en \Pname{RaxML}, con 10 b\'usquedas ras de ML.
+		\item Haga una corrida por defecto en \Pname{RaxML-NG}.
 		\begin{enumerate}
 			\item Dado un archivo \Datos{dna.phy}, para usar el programa debe acceder a la l\'inea de comandos y usar las instrucciones:
 
-			\Cmd{raxml -m GTRGAMMA -p 12345 -s dna.phy -\# 20 -n ML0}
+			%~ \Cmd{raxml- -m GTRGAMMA -p 12345 -s dna.phy -\# 20 -n ML0}
+			\Cmd{ raxml-ng --msa dna.phy --model GTR+G --prefix ML0 --threads 2 --seed 2 }
 			
-			Para 20 b\'usquedas de adici\'on al azar de terminales, a partir de un archivo de datos  \Datos{dna.phy} y con un prefijo de salida de ML0, usando el modelo GTRGAMMA.
+			
+			
+			Para hacer la b\'usqueda por defecto (inicia con 10 
+			\'arboles generados al azar y 10 \'arboles generados por 
+			parsimo ia), a partir de un archivo de datos  
+			\Datos{dna.phy} y con un prefijo de salida de ML0, usando 
+			el modelo GTR + GAMMA; si desea usar un n\'umero distinto 
+			de \'arboles de inicio, puede modificarlos:
+			
+			\Cmd{ raxml-ng --msa dna.phy --model GTR+G --prefix ML1 --threads 2 --seed 2 --tree pars\{25\},rand\{25\}}
 
 		\end{enumerate}
 
-		\item Haga una corrida en \Pname{RaxML}, con 10 b\'usquedas ras de ML para un an\'alisis particionado.
+		\item Haga una corrida en \Pname{RaxML}, para un an\'alisis particionado.
+
+
+
 
 		    \begin{enumerate}
+		    
+		   		    
 			  \item  use las instrucciones: 
 
-			  \Cmd{raxml -m GTRGAMMA -p 12345 -q particionSimpleDNA.txt -s dna.phy -n ML01 }
-			  donde los l\'imites de cada partici\'on se encuentran en el archivo
-        particionSimpleDNA.txt, en este archivo debe indicar el tipo de datos
-        que tiene, por ejemplo: DNA o BIN (morfolo\'ogico/binario).
+			  %~ %% version vieja\Cmd{raxml -m GTRGAMMA -p 12345 -q particionSimpleDNA.txt -s dna.phy -n ML01 }
+			  
+			  \Cmd{raxml-ng --msa dna.phy --model particionSimpleDNA.txt --prefix ML3 --threads 2 --seed 2 }\footnote{
+			  particionSimpleDNA.txt\\
+			  GTR+G+FO, gen1=1-1500\\
+              GTR+G+FO, gen2=1501-7204}
+			  
+			  
+			  donde los l\'imites de cada partici\'on se encuentran en 
+			  el archivo particionSimpleDNA.txt, en este archivo debe 
+			  indicar el tipo de datos que tiene, por ejemplo: DNA o 
+			  BIN (morfolo\'ogico/binario).
 
-			  \item si prefiere hacer el an\'alisis particionado pero estimando las frecuencias de bases para cada partici\'on de manera independiente debe usar:
+			  %~ \item si prefiere hacer el an\'alisis particionado pero 
+			  %~ estimando las frecuencias de bases para cada partici\'on 
+			  %~ de manera independiente debe usar:
 
-			  \Cmd{raxml  -M -m GTRGAMMA -p 12345 -q simpleDNApartition.txt -s dna.phy -n ML02 }
+			  %~ \Cmd{raxml  -M -m GTRGAMMA -p 12345 -q simpleDNApartition.txt -s dna.phy -n ML02 }
 
 		    \end{enumerate}
 	\end{enumerate}
@@ -138,6 +170,6 @@ Los m\'etodos para buscar y seleccionar \'arboles usados en verosimilitud son b\
 
 \section*{Literatura recomendada}
 
-\cite{Swofford1996} [Una descripci\'on muy completa de la forma como se calculan las versomilitudes y los m\'etodos de verosimilitud para encontrar \'arboles].
+\cite{Swofford1996} [Una descripci\'on muy completa de la forma como se calculan las versomilitudes, y los m\'etodos de verosimilitud para encontrar \'arboles].
 
 \cite{Lewis2001} [Introduce el uso de modelos en morfolog\'ia].

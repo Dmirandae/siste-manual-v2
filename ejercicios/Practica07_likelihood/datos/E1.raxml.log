@@ -1,0 +1,78 @@
+
+RAxML-NG v. 0.7.0 BETA released on 22.10.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+raxml-ng-mpi --evaluate --msa dna.phy --model JC --prefix E1 --tree tree.tre
+
+Analysis options:
+  run mode: Evaluate tree likelihood
+  start tree(s): user
+  random seed: 1558293462
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+[00:00:00] Reading alignment from file: dna.phy
+[00:00:00] Loaded alignment with 6 taxa and 7204 sites
+
+WARNING: Fully undetermined columns found: 14
+
+NOTE: Reduced alignment (with duplicates and gap-only sites/taxa removed) 
+NOTE: was saved to: /home/rafael/Desktop/uis/20070-2018-1/manual-filogenia-2a-edicion/siste-manual-v2/ejercicios/Practica07_likelihood/datos/E1.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 726 patterns
+
+Partition 0: noname
+Model: JC
+Alignment sites / patterns: 7190 / 726
+Gaps: 0.09 %
+Invariant sites: 0.14 %
+
+
+NOTE: Binary MSA file already exists: E1.raxml.rba
+
+[00:00:00] Loading user starting tree(s) from: tree.tre
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 726 / 2904
+
+Evaluating 1 trees
+
+[00:00:00] Tree #1, initial LogLikelihood: -27586.599095
+
+[00:00:00 -27586.599095] Initial branch length optimization
+[00:00:00 -27388.562793] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #1, final logLikelihood: -27388.551486
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: NONE
+   Base frequencies (model): 0.250000 0.250000 0.250000 0.250000 
+   Substitution rates (model): 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 
+
+Final LogLikelihood: -27388.551486
+
+AIC score: 54795.102972 / AICc score: 54795.128042 / BIC score: 54857.026990
+Free parameters (model + branch lengths): 9
+
+
+All optimized tree(s) saved to: /home/rafael/Desktop/uis/20070-2018-1/manual-filogenia-2a-edicion/siste-manual-v2/ejercicios/Practica07_likelihood/datos/E1.raxml.mlTrees
+Optimized model saved to: /home/rafael/Desktop/uis/20070-2018-1/manual-filogenia-2a-edicion/siste-manual-v2/ejercicios/Practica07_likelihood/datos/E1.raxml.bestModel
+
+Execution log saved to: /home/rafael/Desktop/uis/20070-2018-1/manual-filogenia-2a-edicion/siste-manual-v2/ejercicios/Practica07_likelihood/datos/E1.raxml.log
+
+Analysis started: 19-May-2019 14:17:42 / finished: 19-May-2019 14:17:42
+
+Elapsed time: 0.030 seconds
+
