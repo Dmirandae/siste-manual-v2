@@ -3,25 +3,59 @@
 \label{ch:likelihood}
 \index{Likelihood!b\'usquedas}
 
-Algunos autores han sugerido que parsimonia es un modelo de evoluci\'on, pero que este no es expl\'icito; por ejemplo que la tasa de transformaciones es baja (ver \cite{Swofford1996, Felsenstein2004}), e independientemente de si el argumento es o no correcto (vea una posici\'on en contra en \cite{Farris1983} y la argumentaci\'on de \cite{Steel2002}), estos autores sugieren que deben usarse modelos expl\'icitos de evoluci\'on como los que se vieron en la pr\'actica \ref{ch:molecular} sobre selecci\'on de modelos (ver p\'agina \pageref{ch:molecular}).
+Algunos autores han sugerido que parsimonia es un modelo de 
+evoluci\'on, pero que este no es expl\'icito; por ejemplo que la tasa 
+de transformaciones es baja (ver \cite{Swofford1996, Felsenstein2004}), 
+e independientemente de si el argumento es o no correcto (vea una 
+posici\'on en contra en \cite{Farris1983} y la argumentaci\'on de 
+\cite{Steel2002}), estos autores sugieren que deben usarse modelos 
+expl\'icitos de evoluci\'on como los que se vieron en la pr\'actica 
+\ref{ch:molecular} sobre selecci\'on de modelos (ver p\'agina 
+\pageref{ch:molecular}).
 
-En este caso se estima el \'arbol (la hip\'otesis filogen\'etica) que maximice
-la probabilidad de los datos actuales, dado el modelo evolutivo sugerido para
-los datos a  analizar, bien sea moleculares o morfol\'ogicos (ver \cite{Lewis2001}).
+En este caso se estima el \'arbol (la hip\'otesis filogen\'etica) que 
+maximice la probabilidad de los datos actuales, dado el modelo 
+evolutivo sugerido para los datos a  analizar, bien sea moleculares o 
+morfol\'ogicos (ver \cite{Lewis2001}).
 
-Uno de los principales problemas con la estimaci\'on de verosimilitud es que el
-valor depende de la longitud de las ramas. En la actualidad, inicialmente se ignora el valor de las diferentes ramas, y luego de encontrar un \'arbol espec\'ifico, se calcula el mejor valor de verosimilitud para una rama a la vez. \cite{Swofford1996} ofrecen una explicaci\'on extensa de los c\'alculos relacionados con el m\'etodo.
+Uno de los principales problemas con la estimaci\'on de verosimilitud 
+es que el valor depende de la longitud de las ramas. En la actualidad, 
+inicialmente se ignora el valor de las diferentes ramas, y luego de 
+encontrar un \'arbol espec\'ifico, se calcula el mejor valor de 
+verosimilitud para una rama a la vez. \cite{Swofford1996} ofrecen una 
+explicaci\'on extensa de los c\'alculos relacionados con el m\'etodo.
 
 
-\section*{T\'ecnicas}
-Los m\'etodos para buscar y seleccionar \'arboles usados en verosimilitud son b\'asicamente los mismos usados en parsimonia: a un \'arbol inicial se lo mejora con permutaci\'on de ramas (ver pr\'actica \ref{cha:parsimonia}, p\'agina \pageref{cha:parsimonia}). Existen diferentes formas de encontrar un \'arbol inicial en verosimilitud. Algunos investigadores suelen empezar por un \'arbol de distancia (NJ: {{\textit{neighbor joining}}} o BIONJ). El problema de este inicio es que para una configuraci\'on particular, solo existe un \'arbol de NJ\footnote{tal y como lo hemos recalcado previamente para los an\'alisis de distancia el orden de entrada influye en el resultado, la topolog\'ia resultante puede cambiar si se cambia el orden de entrada a la matriz.}. Otra forma es la descomposici\'on de estrella, donde se tiene una politomia basal y se trata de resolverla desde la ra\'iz. Este m\'etodo es muy lento, puesto que a diferencia de un \'arbol de Wagner, la magnitud del problema es grande desde el inicio. Una alternativa adicional es comenzar con un \'arbol al azar, pero estos pueden ser sub\'optimos, con lo cual la fase de permutaci\'on es muy lenta. Una \'ultima forma, es utilizar \'arboles de Wagner, pero basados en verosimilitud, o si se desea una respuesta m\'as r\'apida, un \'arbol obtenido por parsimonia y luego permutar las ramas usando verosimilitud.
+\section*{T\'ecnicas} Los m\'etodos para buscar y seleccionar \'arboles 
+usados en verosimilitud son b\'asicamente los mismos usados en 
+parsimonia: a un \'arbol inicial se lo mejora con permutaci\'on de 
+ramas (ver pr\'actica \ref{cha:parsimonia}, p\'agina 
+\pageref{cha:parsimonia}). Existen diferentes formas de encontrar un 
+\'arbol inicial en verosimilitud. Algunos investigadores suelen empezar 
+por un \'arbol de distancia (NJ: {{\textit{neighbor joining}}} o 
+BIONJ). El problema de este inicio es que para una configuraci\'on 
+particular, solo existe un \'arbol de NJ\footnote{tal y como lo hemos 
+recalcado previamente para los an\'alisis de distancia el orden de 
+entrada influye en el resultado, la topolog\'ia resultante puede 
+cambiar si se cambia el orden de entrada a la matriz.}. Otra forma es 
+la descomposici\'on de estrella, donde se tiene una politomia basal y 
+se trata de resolverla desde la ra\'iz. Este m\'etodo es muy lento, 
+puesto que a diferencia de un \'arbol de Wagner, la magnitud del 
+problema es grande desde el inicio. Una alternativa adicional es 
+comenzar con un \'arbol al azar, pero estos pueden ser sub\'optimos, 
+con lo cual la fase de permutaci\'on es muy lenta. Una \'ultima forma, 
+es utilizar \'arboles de Wagner, pero basados en verosimilitud, o si se 
+desea una respuesta m\'as r\'apida, un \'arbol obtenido por parsimonia 
+y luego permutar las ramas usando verosimilitud.
 
 %Matrices de datos (datos.like.dat, dna.phy).
 %Particiones para dna.phy (simpleDNApartition.txt).
 \begin{enumerate} 
  \item{en PAUP*}
 	\begin{enumerate} 
-		\item \label{itm:model} Antes que nada estime el mejor modelo para la matriz, use los procedimientos de la pr\'actica ~\ref{ch:molecular}. 
+		\item \label{itm:model} Antes que nada estime el mejor modelo 
+		para la matriz, use los procedimientos de la pr\'actica 
+		~\ref{ch:molecular}. 
 
 		\pregunta{Argumente qu\'e criterio utiliz\'o para seleccionar el modelo.}
 		
@@ -84,14 +118,47 @@ Los m\'etodos para buscar y seleccionar \'arboles usados en verosimilitud son b\
   Actualmente se puede realizar un an\'alisis de evidencia total con DNA(con o
   sin incluir datos morfol\'ogicos) usando una evaluaci\'on del ML para un conjunto de datos particionado, donde cada partici\'on debe tener su propio modelo (en realidad variaciones de GTR).
 
-  \Pname{RaxML-NG} es un programa mucho m\'as r\'apido que 
-  \Pname{PhyML} y por lo tanto deber\'ia ser una de sus primeras 
-  opciones, el programa cuenta con un solo esquema de instrucciones: 
+  \Pname{RaxML-NGy IQTree} son programas mucho m\'as r\'apido que 
+  \Pname{PhyML} y por lo tanto deber\'ian ser una de sus primeras 
+  opciones; los  programas cuentna con un solo esquema de instrucciones: 
   por l\'inea de commandos. Para mayor informaci\'on revise 
   \http{https://github.com/amkozlov/raxml-ng}.
   
   
-  .
+  \item{en IQTree}
+
+
+	\begin{enumerate}
+	
+		\item Haga una corrida por defecto en \Pname{IQTree}.\\
+		\Cmd{iqtree.exe}
+		
+		\item Haga una corrida por defecto incluyendo el par\'ametro -h que le permitir\'a ver todas las instrucciones disponibles.\\
+		\Cmd{iqtree.exe -h}
+		
+		\item  El an\'alisis por defecto encuentra tanto el modelo que mejor ajusta como el \'arbol de ML bajo tal modelo.\\
+		\Cmd{iqtree.exe -s example.phy}\footnote{si cuenta con un equipo de m\'as de dos procesadores puede usar  iqtree.exe -s example.phy -nt AUTO, que evalua cual es el número \'optimo de procesadores a usar }
+
+		\item  Los archivos de salida le indican tanto los an\'alisis [example.phy.iqtree], como el \'arbol generado [example.phy.treefile]. Revise los dos archivos con un editor de texto y el segundo archivo abralo con \Pname{FigTree} o similar.
+		
+		\item  Para obtener solo el modelo usaremos:\\
+		\Cmd{iqtree.exe -s example.phy -m TESTONLY}
+
+		
+		\item  Cambie el criterio de selecci\'on a AIC y a AICc.\\
+		
+		´Cambia el modelo seleccionado?
+
+		
+		\item y para calcular el soporte de boostrap con 10 r\'eplicas:\\
+		\Cmd{iqtree.exe -s example.phy -m TEST -b 10}
+
+		
+		\item Repita el análisis con 50 r\'eplicas y observe las diferencias.
+
+		
+	\end{enumerate}
+
 
   \item{en RaxML-NG}
 
