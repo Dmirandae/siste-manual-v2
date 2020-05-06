@@ -53,9 +53,39 @@ puede usar hasta 203 modelos y de manera  autom\'atica corre los an\'alisis en m
 %
 \noindent
 
-Par obtener el modelo con programas como \Pname{PAUP*} o \Pname{R} debe tener un archivo de datos con las secuencias alineadas, revise la pr\'actica ~\ref{ch:alinear}. 
+Par obtener el modelo con programas como  \Pname{JModeltest2 [+ PhyML]}, \Pname{R}, \Pname{IQTree} o \Pname{PAUP*} debe tener un archivo de datos con las secuencias alineadas, revise la pr\'actica ~\ref{ch:alinear}. 
 
 %la secuencia b\'asica de instrucciones desde la l\'inea de comandos es:
+
+
+En \Pname{IQTree}
+
+
+	\begin{enumerate}
+	
+		\item Haga una corrida por defecto en \Pname{IQTree}.\\
+		\Cmd{iqtree.exe}
+		
+		\item Haga una corrida por defecto incluyendo el par\'ametro -h que le permitir\'a ver todas las instrucciones disponibles.\\
+		\Cmd{iqtree.exe -h}
+		
+		\item  El an\'alisis por defecto encuentra tanto el modelo que mejor ajusta como el \'arbol de ML bajo tal modelo.\\
+		\Cmd{iqtree.exe -s example.phy}\footnote{si cuenta con un equipo de m\'as de dos procesadores puede usar  iqtree.exe -s example.phy -nt AUTO, que evalua cual es el número \'optimo de procesadores a usar }
+
+		\item  Los archivos de salida le indican tanto los an\'alisis [example.phy.iqtree], como el \'arbol generado [example.phy.treefile]. Revise los dos archivos con un editor de texto y el segundo archivo abralo con \Pname{FigTree} o similar.
+		
+		\item  Para obtener solo el modelo usaremos:\\
+		\Cmd{iqtree.exe -s example.phy -m TESTONLY}
+
+		
+		\item  Cambie el criterio de selecci\'on a AIC y a AICc.\\
+		
+		?`Cambia el modelo seleccionado?
+
+		
+		
+	\end{enumerate}
+
 
 
 En \Pname{JModeltest2 + PhyML}

@@ -141,20 +141,17 @@ y luego permutar las ramas usando verosimilitud.
 
 		\item  Los archivos de salida le indican tanto los an\'alisis [example.phy.iqtree], como el \'arbol generado [example.phy.treefile]. Revise los dos archivos con un editor de texto y el segundo archivo abralo con \Pname{FigTree} o similar.
 		
-		\item  Para obtener solo el modelo usaremos:\\
-		\Cmd{iqtree.exe -s example.phy -m TESTONLY}
-
 		
 		\item  Cambie el criterio de selecci\'on a AIC y a AICc.\\
 		
-		´Cambia el modelo seleccionado?
+		?`Cambia el modelo la topolog\'ia final?
 
 		
-		\item y para calcular el soporte de boostrap con 10 r\'eplicas:\\
-		\Cmd{iqtree.exe -s example.phy -m TEST -b 10}
+		%~ \item y para calcular el soporte de boostrap con 10 r\'eplicas:\\
+		%~ \Cmd{iqtree.exe -s example.phy -m TEST -b 10}
 
 		
-		\item Repita el análisis con 50 r\'eplicas y observe las diferencias.
+		\item Repita el análisis con 20 y 50 r\'eplicas y observe las diferencias.
 
 		
 	\end{enumerate}
