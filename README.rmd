@@ -1,12 +1,10 @@
 ---
 title: "Manual Sistemática Filogenética"
 author: "D.R. Miranda Esquivel"
-date: "2020 / 05 / 06"
+date: "2023 / 03 / 12"
 ---
 
 [Built with Emacs]
-
-
 
 
 Manual Sistemática Filogenética.
@@ -14,7 +12,3 @@ Manual Sistemática Filogenética.
 2a Edición.
 
 Licencia GPL-2.
-
-
-
-
